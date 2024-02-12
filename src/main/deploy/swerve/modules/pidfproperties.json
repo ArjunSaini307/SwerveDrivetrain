@@ -1,16 +1,18 @@
 {
+  // Proportional, Integral, Derivative, Feedforward, and Integral Zone for drive control
   "drive": {
-    "p": 0.0020645,
-    "i": 0,
-    "d": 0,
-    "f": 0,
-    "iz": 0
+    "p": 0.0020645,  // Proportional gain
+    "i": 0,          // Integral gain
+    "d": 0,          // Derivative gain
+    "f": 0,          // Feedforward gain
+    "iz": 0          // Integral zone (integral accumulator zone)
   },
+  // Proportional, Integral, Derivative, Feedforward, and Integral Zone for angle control
   "angle": {
-    "p": 0.0020645,
-    "i": 0,
-    "d": 0,
-    "f": 0,
-    "iz": 0
+    "p": 0.0020645,  // Proportional gain
+    "i": 0,          // Integral gain
+    "d": 0,          // Derivative gain
+    "f": 0,          // Feedforward gain
+    "iz": 0          // Integral zone (integral accumulator zone)
   }
 }
