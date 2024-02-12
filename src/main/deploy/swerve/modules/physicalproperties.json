@@ -1,16 +1,21 @@
 {
+  // Coefficient of friction for the wheel grip
   "wheelGripCoefficientOfFriction": 1.19,
+  // Current limits for drive and angle motors
   "currentLimit": {
-    "drive": 40,
-    "angle": 20
+    "drive": 40,    // Current limit for drive motor (in amperes)
+    "angle": 20     // Current limit for angle motor (in amperes)
   },
+  // Ramp rates for drive and angle motors
   "rampRate": {
-    "drive": 0.05,
-    "angle": 0.05
+    "drive": 0.05,  // Ramp rate for drive motor (in seconds to full output)
+    "angle": 0.05   // Ramp rate for angle motor (in seconds to full output)
   },
+  // Optimal voltage for operation
   "optimalVoltage": 12,
+  // Conversion factors for angle and drive units
   "conversionFactor": {
-    "angle": 16.8,
-    "drive": 0.047286787200699704
+    "angle": 16.8,                               // Conversion factor for angle (e.g., degrees per unit)
+    "drive": 0.047286787200699704                 // Conversion factor for drive (e.g., inches per unit)
   }
 }
