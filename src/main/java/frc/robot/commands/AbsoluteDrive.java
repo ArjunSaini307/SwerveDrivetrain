@@ -5,7 +5,6 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -16,18 +15,20 @@ import java.util.function.DoubleSupplier;
 import swervelib.SwerveController;
 import swervelib.math.SwerveMath;
 
+// Define a class named AbsoluteDrive which extends CommandBase
 public class AbsoluteDrive extends CommandBase {
 
+  // Declare private variables for SwerveSubsystem, velocity inputs, heading inputs, and a boolean for open loop control
   private final SwerveSubsystem swerve;
-  private final DoubleSupplier  vX, vY;
+  private final DoubleSupplier vX, vY;
   private final DoubleSupplier headingHorizontal, headingVertical;
   private final boolean isOpenLoop;
 
-
-  /** Creates a new AbsoluteDrive. */
+  // Constructor for AbsoluteDrive command
   public AbsoluteDrive(SwerveSubsystem swerve, DoubleSupplier vX, DoubleSupplier vY, DoubleSupplier headingHorizontal,
   DoubleSupplier headingVertical, boolean isOpenLoop) {
 
+    // Assign parameters to corresponding private variables
     this.swerve = swerve;
     this.vX = vX;
     this.vY = vY;
@@ -35,6 +36,7 @@ public class AbsoluteDrive extends CommandBase {
     this.headingVertical = headingVertical;
     this.isOpenLoop = isOpenLoop;
 
+    // Require the SwerveSubsystem
     addRequirements(swerve);
   }
 
@@ -45,18 +47,17 @@ public class AbsoluteDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-
-    // Get the desired chassis speeds based on a 2 joystick module.
-
+    // Get the desired chassis speeds based on joystick inputs
     ChassisSpeeds desiredSpeeds = swerve.getTargetSpeeds(vX.getAsDouble(), vY.getAsDouble(),
                                                          headingHorizontal.getAsDouble(),
                                                          headingVertical.getAsDouble());
 
-    // Limit velocity to prevent tippy
+    // Limit velocity to prevent tipping
     Translation2d translation = SwerveController.getTranslation2d(desiredSpeeds);
     translation = SwerveMath.limitVelocity(translation, swerve.getFieldVelocity(), swerve.getPose(),
                                            Constants.LOOP_TIME, Constants.ROBOT_MASS, List.of(Constants.CHASSIS),
                                            swerve.getSwerveDriveConfiguration());
+    // Display limited translation on SmartDashboard
     SmartDashboard.putNumber("LimitedTranslation", translation.getX());
     SmartDashboard.putString("Translation", translation.toString());
 
@@ -74,3 +75,4 @@ public class AbsoluteDrive extends CommandBase {
     return false;
   }
 }
+
