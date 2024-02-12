@@ -1,14 +1,16 @@
 {
+  // Configuration for the Inertial Measurement Unit (IMU)
   "imu": {
-    "type": "navx",
-    "canbus": null
+    "type": "navx",  // Type of IMU (e.g., NavX)
+    "canbus": null   // CAN bus configuration for IMU (if applicable)
   },
+  // Whether the IMU data should be inverted
   "invertedIMU": true,
+  // Configuration files for individual modules (e.g., motor controllers) 
   "modules": [
-    "frontleft.json",
-    "frontright.json",
-    "backleft.json",
-    "backright.json"
+    "frontleft.json",   // Configuration file for the front left module
+    "frontright.json",  // Configuration file for the front right module
+    "backleft.json",    // Configuration file for the back left module
+    "backright.json"    // Configuration file for the back right module
   ]
-  
 }
