@@ -1,8 +1,10 @@
 {
+  // Deadband radius for angle joystick input
   "angleJoystickRadiusDeadband": 0.5,
+  // Proportional, Integral, and Derivative gains for heading control
   "heading": {
-    "p": 0.4,
-    "i": 0,
-    "d": 0.01
+    "p": 0.4,    // Proportional gain
+    "i": 0,      // Integral gain
+    "d": 0.01    // Derivative gain
   }
 }
