@@ -1,26 +1,32 @@
 {
+  // Location information of the device
   "location": {
-    "front": 11.25,
-    "left": -11.25
+    "front": 11.25,    // Front position offset
+    "left": -11.25     // Left position offset
   },
+  // Absolute encoder offset value
   "absoluteEncoderOffset": 149.238,
+  // Drive configuration details
   "drive": {
-    "type": "sparkmax",
-    "id": 2,
-    "canbus": null
+    "type": "sparkmax", // Type of drive controller
+    "id": 2,            // ID of the drive controller
+    "canbus": null      // CAN bus configuration (if applicable)
   },
+  // Inversion settings for drive and angle
   "inverted": {
-    "drive": false,
-    "angle": true
+    "drive": false,     // Whether drive motor is inverted
+    "angle": true       // Whether angle motor is inverted
   },
+  // Angle sensor configuration details
   "angle": {
-    "type": "sparkmax",
-    "id": 1,
-    "canbus": null
+    "type": "sparkmax", // Type of angle sensor controller
+    "id": 1,            // ID of the angle sensor controller
+    "canbus": null      // CAN bus configuration (if applicable)
   },
+  // Encoder configuration details
   "encoder": {
-    "type": "cancoder",
-    "id": 1,
-    "canbus": null
+    "type": "cancoder", // Type of encoder
+    "id": 1,            // ID of the encoder
+    "canbus": null      // CAN bus configuration (if applicable)
   }
 }
